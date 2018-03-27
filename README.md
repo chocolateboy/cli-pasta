@@ -33,13 +33,7 @@ clipasta - handle Ctrl-C and broken-pipe errors gracefully in command-line tools
 require "clipasta"
 require "optparse"
 
-def process(line)
-  # ...
-end
-
-OptionParser.new do |opts|
-  # ...
-end.parse!
+# ...
 
 ARGF.each do |line|
   puts process(line)
@@ -110,6 +104,6 @@ None.
 
 # COPYRIGHT AND LICENSE
 
-Copyright chocolateboy, 2018.
+Copyright © chocolateboy, 2018.
 
 This gem is free software. It is available under the terms of the [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
