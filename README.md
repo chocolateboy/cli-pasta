@@ -112,4 +112,4 @@ None.
 
 Copyright chocolateboy, 2018.
 
-This gem is free software. It is available under the terms of the Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
+This gem is free software. It is available under the terms of the [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
