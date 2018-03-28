@@ -4,47 +4,44 @@ require 'komenda'
 require 'test/unit'
 require 'tty-which'
 
-# a wrapper for `Komenda.run` which ensures the bundler environment is propagated to
-# nested ruby calls.
-def run_command(command) # XXX run is already taken by Test::Unit::TestCase
-  Komenda.run(command, use_bundler_env: true)
-end
-
 class CLIPastaTest < Test::Unit::TestCase
+  # ensure this gem is visible in nested ruby calls
+  RUBY = 'ruby -r bundler/setup'
+
   TIMEOUT = TTY::Which.which('timeout') || TTY::Which.which('gtimeout')
 
   def test_epipe
-    result = run_command %q[ruby -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %[#{RUBY} -e 'loop { puts "." }' | head -n0]
     assert { result.stderr =~ /EPIPE/ }
-    result = run_command %q[ruby -r cli-pasta -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %[#{RUBY} -r cli-pasta -e 'loop { puts "." }' | head -n0]
     assert { result.stderr !~ /EPIPE/ }
   end
 
   def test_sigint
     if TIMEOUT
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 #{RUBY} -e sleep]
       assert { result.stderr =~ /Interrupt/ }
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r cli-pasta -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 #{RUBY} -r cli-pasta -e sleep]
       assert { result.stderr !~ /Interrupt/ }
     end
   end
 
   def test_epipe_no_sigint
-    result = run_command %q[ruby -r cli-pasta/epipe -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %[#{RUBY} -r cli-pasta/epipe -e 'loop { puts "." }' | head -n0]
     assert { result.stderr !~ /EPIPE/ }
 
     if TIMEOUT
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r cli-pasta/epipe -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 #{RUBY} -r cli-pasta/epipe -e sleep]
       assert { result.stderr =~ /Interrupt/ }
     end
   end
 
   def test_sigint_no_epipe
-    result = run_command %q[ruby -r cli-pasta/sigint -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %[#{RUBY} -r cli-pasta/sigint -e 'loop { puts "." }' | head -n0]
     assert { result.stderr =~ /EPIPE/ }
 
     if TIMEOUT
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r cli-pasta/sigint -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 #{RUBY} -r cli-pasta/sigint -e sleep]
       assert { result.stderr !~ /Interrupt/ }
     end
   end
