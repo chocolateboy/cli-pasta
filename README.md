@@ -62,7 +62,7 @@ require "cli-pasta"
 
 ## BACKGROUND
 
-By default, Ruby produces an ugly error message when scripts are interrupted by <kbd>Ctrl-C</kbd> (`SIGINT`) e.g.:
+By default, ruby produces an ugly error message when scripts are interrupted by <kbd>Ctrl-C</kbd> (`SIGINT`) e.g.:
 
     $ timeout --signal INT 1 ruby -e sleep
 
