@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# by default, Ruby blurts out a bunch of noise on Ctrl-C:
+# by default, ruby blurts out a bunch of noise on Ctrl-C:
 #
 #   ^CTraceback (most recent call last):
 #           1: from -e:1:in `<main>'
