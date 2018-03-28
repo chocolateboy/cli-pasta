@@ -10,7 +10,7 @@ end
 
 desc 'Check the codebase for style violations'
 task :rubocop do
-  sh 'rubocop', '--display-cop-names', '--config', '.rubocop/rubocop.yml'
+  sh 'rubocop', '--display-cop-names', '--config', 'resources/rubocop/rubocop.yml'
 end
 
 task :release => %i[rubocop test]
