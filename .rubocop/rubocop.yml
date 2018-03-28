@@ -2,6 +2,10 @@
 
 inherit_from: default.yml
 
+Naming/FileName:
+  Exclude:
+    - 'lib/cli-pasta.rb'
+
 Style/GuardClause:
     Exclude:
         - 'test/**/*.*'

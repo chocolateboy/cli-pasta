@@ -19,7 +19,7 @@
 
 # NAME
 
-cli-pasta - handle Ctrl-C and broken-pipe errors gracefully in command-line tools
+cli-pasta - handle Ctrl-C and broken-pipe errors gracefully in Ruby command-line tools
 
 # INSTALL
 
