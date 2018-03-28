@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |spec|
   spec.name     = 'cli-pasta'
-  spec.version  = '0.0.1'
+  spec.version  = '1.0.0'
   spec.author   = 'chocolateboy'
   spec.email    = 'chocolate@cpan.org'
-  spec.summary  = 'Handle Ctrl-C and broken-pipe errors gracefully in command-line tools'
+  spec.summary  = 'Handle Ctrl-C and broken-pipe errors gracefully in Ruby command-line tools'
   spec.homepage = 'https://github.com/chocolateboy/cli-pasta'
   spec.license  = 'Artistic-2.0'
 

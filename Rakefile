@@ -13,4 +13,5 @@ task :rubocop do
   sh 'rubocop', '--display-cop-names', '--config', '.rubocop/rubocop.yml'
 end
 
+task :release => %i[rubocop test]
 task :default => :test

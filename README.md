@@ -1,7 +1,8 @@
 # cli-pasta
 
-<!-- [![Gem Version](https://badge.fury.io/rb/cli-pasta.svg)](https://badge.fury.io/rb/cli-pasta) -->
 [![Build Status](https://travis-ci.org/chocolateboy/cli-pasta.svg)](https://travis-ci.org/chocolateboy/cli-pasta)
+[![Gem Version](https://img.shields.io/gem/v/cli-pasta.svg)](https://rubygems.org/gems/cli-pasta)
+[![License](https://img.shields.io/badge/license-artistic-2.0.svg)](https://github.com/chocolateboy/cli-pasta/blob/master/LICENSE.md)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -12,6 +13,8 @@
 - [DESCRIPTION](#description)
   - [BACKGROUND](#background)
 - [CLASSES](#classes)
+- [VERSION](#version)
+- [SEE ALSO](#see-also)
 - [AUTHOR](#author)
 - [COPYRIGHT AND LICENSE](#copyright-and-license)
 
@@ -23,7 +26,9 @@ cli-pasta - handle Ctrl-C and broken-pipe errors gracefully in Ruby command-line
 
 # INSTALL
 
-    gem "cli-pasta", github: "chocolateboy/cli-pasta"
+```ruby
+gem "cli-pasta"
+```
 
 # SYNOPSIS
 
@@ -97,6 +102,14 @@ The snippets provided by this gem install signal handlers which handle these err
 # CLASSES
 
 None.
+
+# VERSION
+
+1.0.0
+
+# SEE ALSO
+
+* [nice-sigint](https://github.com/xiongchiamiov/nice-sigint) - make Ruby handle SIGINTs in a less-ugly manner
 
 # AUTHOR
 
