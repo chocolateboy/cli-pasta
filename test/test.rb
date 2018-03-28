@@ -4,6 +4,10 @@ require 'komenda'
 require 'test/unit'
 require 'tty-which'
 
+# XXX `ruby -Ilib` is needed for the tests to work work on Travis.
+# otherwise, attempts to load clipasta/epipe and clipasta/sigint from nested ruby
+# calls die with a LoadError.
+
 class CLIPastaTest < Test::Unit::TestCase
   TIMEOUT = TTY::Which.which('timeout') || TTY::Which.which('gtimeout')
 

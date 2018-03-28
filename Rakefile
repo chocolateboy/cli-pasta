@@ -13,5 +13,4 @@ task :rubocop do
   sh 'rubocop', '--display-cop-names', '--config', '.rubocop/rubocop.yml'
 end
 
-task :test => :clobber # get rid of the pkg dir
 task :default => :test
