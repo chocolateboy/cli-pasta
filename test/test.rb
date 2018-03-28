@@ -8,37 +8,37 @@ class CLIPastaTest < Test::Unit::TestCase
   TIMEOUT = TTY::Which.which('timeout') || TTY::Which.which('gtimeout')
 
   def test_epipe
-    result = Komenda.run %q[ruby -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %q[bundler exec ruby -e 'loop { puts "." }' | head -n0]
     assert { result.stderr =~ /EPIPE/ }
-    result = Komenda.run %q[ruby -r clipasta -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %q[bundler exec ruby -r clipasta -e 'loop { puts "." }' | head -n0]
     assert { result.stderr !~ /EPIPE/ }
   end
 
   def test_sigint
     if TIMEOUT
-      result = Komenda.run %[#{TIMEOUT} --signal INT 1 ruby -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 bundler exec ruby -e sleep]
       assert { result.stderr =~ /Interrupt/ }
-      result = Komenda.run %[#{TIMEOUT} --signal INT 1 ruby -r clipasta -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 bundler exec ruby -r clipasta -e sleep]
       assert { result.stderr !~ /Interrupt/ }
     end
   end
 
   def test_epipe_no_sigint
-    result = Komenda.run %q[ruby -r clipasta/epipe -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %q[bundler exec ruby -r clipasta/epipe -e 'loop { puts "." }' | head -n0]
     assert { result.stderr !~ /EPIPE/ }
 
     if TIMEOUT
-      result = Komenda.run %[#{TIMEOUT} --signal INT 1 ruby -r clipasta/epipe -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 bundler exec ruby -r clipasta/epipe -e sleep]
       assert { result.stderr =~ /Interrupt/ }
     end
   end
 
   def test_sigint_no_epipe
-    result = Komenda.run %q[ruby -r clipasta/sigint -e 'loop { puts "." }' | head -n0]
+    result = Komenda.run %q[bundler exec ruby -r clipasta/sigint -e 'loop { puts "." }' | head -n0]
     assert { result.stderr =~ /EPIPE/ }
 
     if TIMEOUT
-      result = Komenda.run %[#{TIMEOUT} --signal INT 1 ruby -r clipasta/sigint -e sleep]
+      result = Komenda.run %[#{TIMEOUT} --signal INT 1 bundler exec ruby -r clipasta/sigint -e sleep]
       assert { result.stderr !~ /Interrupt/ }
     end
   end
