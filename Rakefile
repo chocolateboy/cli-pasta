@@ -4,7 +4,7 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.test_files = FileList['test/test*.rb']
+  t.test_files = FileList['test/*.rb']
   t.verbose = true
 end
 
@@ -13,5 +13,5 @@ task :rubocop do
   sh 'rubocop', '--display-cop-names', '--config', '.rubocop/rubocop.yml'
 end
 
-task :test => 'install:local'
+task :test => :clobber # get rid of the pkg dir
 task :default => :test
