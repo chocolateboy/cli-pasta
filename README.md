@@ -42,7 +42,7 @@ end
 
 # DESCRIPTION
 
-`cli-pasta` packages boilerplate code which is commonly copied 'n' pasted into Ruby CLI scripts to perform the following tasks:
+cli-pasta packages boilerplate code which is commonly copied 'n' pasted into Ruby CLI scripts to perform the following tasks:
 
 * set up an `EPIPE` handler to handle broken pipes in the same way as other CLI tools
 * set up a `SIGINT` handler to handle <kbd>Ctrl-C</kbd> in the same way as other CLI tools
