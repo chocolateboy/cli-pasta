@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name     = 'clipasta'
+  spec.name     = 'cli-pasta'
   spec.version  = '0.0.1'
   spec.author   = 'chocolateboy'
   spec.email    = 'chocolate@cpan.org'
   spec.summary  = 'Handle Ctrl-C and broken-pipe errors gracefully in command-line tools'
-  spec.homepage = 'https://github.com/chocolateboy/clipasta'
+  spec.homepage = 'https://github.com/chocolateboy/cli-pasta'
   spec.license  = 'Artistic-2.0'
 
   if spec.respond_to?(:metadata)
@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   # spec.required_ruby_version = '>= 2.3.0'
 
   spec.metadata = {
-    'bug_tracker_uri' => 'https://github.com/chocolateboy/clipasta/issues',
-    'changelog_uri'   => 'https://github.com/chocolateboy/clipasta/blob/master/CHANGELOG.md',
-    'source_code_uri' => 'https://github.com/chocolateboy/clipasta',
+    'bug_tracker_uri' => 'https://github.com/chocolateboy/cli-pasta/issues',
+    'changelog_uri'   => 'https://github.com/chocolateboy/cli-pasta/blob/master/CHANGELOG.md',
+    'source_code_uri' => 'https://github.com/chocolateboy/cli-pasta',
   }
 
   spec.add_development_dependency 'bundler', '~> 1.16'

@@ -16,7 +16,7 @@ class CLIPastaTest < Test::Unit::TestCase
   def test_epipe
     result = run_command %q[ruby -e 'loop { puts "." }' | head -n0]
     assert { result.stderr =~ /EPIPE/ }
-    result = run_command %q[ruby -r clipasta -e 'loop { puts "." }' | head -n0]
+    result = run_command %q[ruby -r cli-pasta -e 'loop { puts "." }' | head -n0]
     assert { result.stderr !~ /EPIPE/ }
   end
 
@@ -24,27 +24,27 @@ class CLIPastaTest < Test::Unit::TestCase
     if TIMEOUT
       result = run_command %[#{TIMEOUT} --signal INT 1 ruby -e sleep]
       assert { result.stderr =~ /Interrupt/ }
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r clipasta -e sleep]
+      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r cli-pasta -e sleep]
       assert { result.stderr !~ /Interrupt/ }
     end
   end
 
   def test_epipe_no_sigint
-    result = run_command %q[ruby -r clipasta/epipe -e 'loop { puts "." }' | head -n0]
+    result = run_command %q[ruby -r cli-pasta/epipe -e 'loop { puts "." }' | head -n0]
     assert { result.stderr !~ /EPIPE/ }
 
     if TIMEOUT
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r clipasta/epipe -e sleep]
+      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r cli-pasta/epipe -e sleep]
       assert { result.stderr =~ /Interrupt/ }
     end
   end
 
   def test_sigint_no_epipe
-    result = run_command %q[ruby -r clipasta/sigint -e 'loop { puts "." }' | head -n0]
+    result = run_command %q[ruby -r cli-pasta/sigint -e 'loop { puts "." }' | head -n0]
     assert { result.stderr =~ /EPIPE/ }
 
     if TIMEOUT
-      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r clipasta/sigint -e sleep]
+      result = run_command %[#{TIMEOUT} --signal INT 1 ruby -r cli-pasta/sigint -e sleep]
       assert { result.stderr !~ /Interrupt/ }
     end
   end

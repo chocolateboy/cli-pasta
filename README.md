@@ -1,7 +1,7 @@
-# clipasta
+# cli-pasta
 
-<!-- [![Gem Version](https://badge.fury.io/rb/clipasta.svg)](https://badge.fury.io/rb/clipasta) -->
-[![Build Status](https://travis-ci.org/chocolateboy/clipasta.svg)](https://travis-ci.org/chocolateboy/clipasta)
+<!-- [![Gem Version](https://badge.fury.io/rb/cli-pasta.svg)](https://badge.fury.io/rb/cli-pasta) -->
+[![Build Status](https://travis-ci.org/chocolateboy/cli-pasta.svg)](https://travis-ci.org/chocolateboy/cli-pasta)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -19,18 +19,18 @@
 
 # NAME
 
-clipasta - handle Ctrl-C and broken-pipe errors gracefully in command-line tools
+cli-pasta - handle Ctrl-C and broken-pipe errors gracefully in command-line tools
 
 # INSTALL
 
-    gem "clipasta", github: "chocolateboy/clipasta"
+    gem "cli-pasta", github: "chocolateboy/cli-pasta"
 
 # SYNOPSIS
 
 ```ruby
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
-require "clipasta"
+require "cli-pasta"
 require "optparse"
 
 # ...
@@ -42,7 +42,7 @@ end
 
 # DESCRIPTION
 
-`clipasta` packages boilerplate code which is commonly copied 'n' pasted into Ruby CLI scripts to perform the following tasks:
+`cli-pasta` packages boilerplate code which is commonly copied 'n' pasted into Ruby CLI scripts to perform the following tasks:
 
 * set up an `EPIPE` handler to handle broken pipes in the same way as other CLI tools
 * set up a `SIGINT` handler to handle <kbd>Ctrl-C</kbd> in the same way as other CLI tools
@@ -50,14 +50,14 @@ end
 These tasks are executed by loading the corresponding files, either separately e.g.:
 
 ```ruby
-require "clipasta/epipe"
-require "clipasta/sigint"
+require "cli-pasta/epipe"
+require "cli-pasta/sigint"
 ```
 
 Or as a group e.g.:
 
 ```ruby
-require "clipasta"
+require "cli-pasta"
 ```
 
 ## BACKGROUND
@@ -88,10 +88,10 @@ Output:
 
 The snippets provided by this gem install signal handlers which handle these errors in the same way as other CLI tools e.g.:
 
-    $ timeout --signal INT 1 ruby -r clipasta -e sleep
+    $ timeout --signal INT 1 ruby -r cli-pasta -e sleep
     # No output
 
-    $ ruby -r clipasta -e 'loop { puts "." }' | head -n0
+    $ ruby -r cli-pasta -e 'loop { puts "." }' | head -n0
     # No output
 
 # CLASSES

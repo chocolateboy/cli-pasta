@@ -2,5 +2,5 @@
 
 # handle Ctrl-C (SIGINT) and broken-pipe errors gracefully in CLI scripts
 
-require_relative 'clipasta/epipe'
-require_relative 'clipasta/sigint'
+require_relative 'cli-pasta/epipe'
+require_relative 'cli-pasta/sigint'
