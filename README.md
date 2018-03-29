@@ -117,6 +117,7 @@ None.
 
 # COPYRIGHT AND LICENSE
 
-Copyright © chocolateboy, 2018.
+Copyright © 2018 by chocolateboy.
 
-cli-pasta is free software. It is available under the terms of the [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
+This is free software; you can redistribute it and/or modify it under the
+terms of the [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
