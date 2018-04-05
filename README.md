@@ -72,7 +72,7 @@ By default, ruby produces an ugly error message when scripts are interrupted by 
 
 Output:
 
-    ^CTraceback (most recent call last):
+    Traceback (most recent call last):
             1: from -e:1:in `<main>'
     -e:1:in `sleep': Interrupt
 
