@@ -27,7 +27,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'komenda', '~> 0.1.8'
-  spec.add_development_dependency 'minitest', '~> 5.11'
   spec.add_development_dependency 'minitest-power_assert', '~> 0.3.0'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rubocop', '~> 0.54.0'
