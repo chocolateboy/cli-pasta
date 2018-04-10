@@ -48,14 +48,14 @@ end
 
 cli-pasta packages boilerplate code which is commonly copied 'n' pasted into Ruby CLI scripts to perform the following tasks:
 
-* set up an `EPIPE` handler to handle broken pipes in the same way as other CLI tools
 * set up a `SIGINT` handler to handle <kbd>Ctrl-C</kbd> in the same way as other CLI tools
+* set up a `SIGPIPE` handler to handle broken pipes in the same way as other CLI tools
 
 These tasks are executed by loading the corresponding files, either separately e.g.:
 
 ```ruby
-require "cli-pasta/epipe"
 require "cli-pasta/sigint"
+require "cli-pasta/sigpipe"
 ```
 
 Or as a group e.g.:
