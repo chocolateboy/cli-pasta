@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cli-pasta (1.0.0)
+    cli-pasta (2.0.0)
 
 GEM
   remote: https://rubygems.org/
