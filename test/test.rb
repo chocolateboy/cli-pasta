@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 require 'komenda'
-require 'minitest/autorun'
-require 'minitest-power_assert'
 require 'tty-which'
+require_relative 'test_helper'
 
 RUBY = 'ruby -r bundler/setup' # ensure this gem is visible in nested ruby calls
 NO_TIMEOUT = 'timeout(1) is not available'
