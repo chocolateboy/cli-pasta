@@ -9,11 +9,12 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 module Minitest
   module Reporters
     class BaseReporter
+      # fix mangled output for assertion errors by toggling the default
+      # value of the "display the error's class name" option to false:
+      # https://github.com/kern/minitest-reporters/issues/264
+
       alias old_print_info print_info
 
-      # fix mangled output for assertion errors by toggling the default
-      # "display the error's class name" option to false:
-      # https://github.com/kern/minitest-reporters/issues/264
       def print_info(error, display_type = false)
         old_print_info(error, display_type)
       end
@@ -28,6 +29,7 @@ module Minitest
     #   - after: foo the bar
     #
     # inspired by: https://stackoverflow.com/q/24149581
+
     alias old_name name
 
     def name
