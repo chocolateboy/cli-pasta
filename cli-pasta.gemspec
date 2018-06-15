@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   # spec.required_ruby_version = '>= 2.3.0'
 
   spec.metadata = {
-    'allowed_push_host' => 'http://rubygems.org',
+    'allowed_push_host' => 'https://rubygems.org',
     'bug_tracker_uri'   => 'https://github.com/chocolateboy/cli-pasta/issues',
     'changelog_uri'     => 'https://github.com/chocolateboy/cli-pasta/blob/master/CHANGELOG.md',
     'source_code_uri'   => 'https://github.com/chocolateboy/cli-pasta',
