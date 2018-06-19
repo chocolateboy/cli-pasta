@@ -12,6 +12,9 @@ AllCops:
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
+Layout/IndentHash:
+    EnforcedStyle: consistent
+
 Lint/NestedMethodDefinition:
   Enabled: false
 
@@ -30,6 +33,9 @@ Security/Eval:
 Style/AsciiComments:
   Enabled: false
 
+Style/BracesAroundHashParameters:
+    Enabled: False
+
 Style/CommentAnnotation:
   Enabled: false
 
@@ -39,8 +45,7 @@ Style/FormatString:
   Enabled: false
 
 Style/HashSyntax:
-  Exclude:
-    - '**/Rakefile'
+    Enabled: false
 
 Style/IfUnlessModifier:
   Enabled: false
