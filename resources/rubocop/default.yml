@@ -33,6 +33,9 @@ Security/Eval:
 Style/AsciiComments:
   Enabled: false
 
+Style/BracesAroundHashParameters:
+  Enabled: false
+
 Style/CommentAnnotation:
   Enabled: false
 
@@ -46,7 +49,6 @@ Style/FormatString:
 
 Style/HashSyntax:
   EnforcedStyle: ruby19
-  UseHashRocketsWithSymbolValues: true
   PreferHashRocketsForNonAlnumEndingSymbols: false
   Exclude:
     - '**/Rakefile'
