@@ -9,10 +9,13 @@ AllCops:
     - '.git/**/*'
     - '.rubocop/**/*'
 
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Lint/NestedMethodDefinition:
@@ -33,9 +36,6 @@ Security/Eval:
 Style/AsciiComments:
   Enabled: false
 
-Style/BracesAroundHashParameters:
-  Enabled: false
-
 Style/CommentAnnotation:
   Enabled: false
 
@@ -49,6 +49,7 @@ Style/FormatString:
 
 Style/HashSyntax:
   EnforcedStyle: ruby19
+  UseHashRocketsWithSymbolValues: true
   PreferHashRocketsForNonAlnumEndingSymbols: false
   Exclude:
     - '**/Rakefile'
