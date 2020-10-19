@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.files = `git ls-files -z *.md bin lib`.split("\0")
 
-  # spec.required_ruby_version = '>= 2.3.0'
+  spec.required_ruby_version = '>= 2.5.0'
 
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-power_assert', '~> 0.3.0'
   spec.add_development_dependency 'minitest-reporters', '~> 1.4'
   spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rubocop', '~> 0.88.0'
+  spec.add_development_dependency 'rubocop', '~> 0.93'
   spec.add_development_dependency 'tty-which', '~> 0.4.2'
 end

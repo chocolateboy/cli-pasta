@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/chocolateboy/cli-pasta.svg)](https://travis-ci.org/chocolateboy/cli-pasta)
 [![Gem Version](https://img.shields.io/gem/v/cli-pasta.svg)](https://rubygems.org/gems/cli-pasta)
 
-<!-- toc -->
+<!-- TOC -->
 
 - [NAME](#name)
 - [INSTALL](#install)
@@ -16,7 +16,7 @@
 - [AUTHOR](#author)
 - [COPYRIGHT AND LICENSE](#copyright-and-license)
 
-<!-- tocstop -->
+<!-- TOC END -->
 
 # NAME
 
