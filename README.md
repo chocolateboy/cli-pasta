@@ -107,7 +107,7 @@ errors in the same way as other CLI tools, e.g.:
 
 # VERSION
 
-2.0.0
+2.0.1
 
 # SEE ALSO
 
