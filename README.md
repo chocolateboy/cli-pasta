@@ -1,6 +1,6 @@
 # cli-pasta
 
-[![Build Status](https://travis-ci.org/chocolateboy/cli-pasta.svg)](https://travis-ci.org/chocolateboy/cli-pasta)
+[![Build Status](https://github.com/chocolateboy/cli-pasta/workflows/test/badge.svg)](https://github.com/chocolateboy/cli-pasta/actions?query=workflow%3Atest)
 [![Gem Version](https://img.shields.io/gem/v/cli-pasta.svg)](https://rubygems.org/gems/cli-pasta)
 
 <!-- TOC -->

@@ -1,0 +1,55 @@
+name: test
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - '**.md'
+
+env:
+  CI: true
+
+jobs:
+  skip-duplicate-runs:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@ea548f2a2a08c55dcb111418ca62181f7887e297
+        with:
+          concurrent_skipping: 'same_content'
+          paths_ignore: '["**/*.md"]'
+
+  test:
+    needs: skip-duplicate-runs
+    if: ${{ needs.skip-duplicate-runs.outputs.should_skip != 'true' }}
+    name: "ruby v${{ matrix.ruby-version }} on ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        # FIXME os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        # FIXME ruby-version: ['2.5', '2.6', '2.7', '3.0']
+        os: ['ubuntu-latest', 'macos-latest']
+        ruby-version: ['2.5', '2.6', '2.7']
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: set up ruby v${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: false
+
+      - name: install coreutils
+        if: ${{ matrix.os == 'macos-latest' }}
+        run: brew install coreutils
+
+      - name: install dependencies
+        run: bundle install
+
+      - name: test
+        run: bundle exec rake test
