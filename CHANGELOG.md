@@ -1,5 +1,6 @@
-## 2.0.1 - TBD
+## 2.1.0 - TBD
 
+- relicense: Artistic 2.0 -> MIT
 - drop support for EOL ruby versions (&lt; 2.5)
 - update dependencies
 

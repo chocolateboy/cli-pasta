@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email    = 'chocolate@cpan.org'
   spec.summary  = 'Handle Ctrl-C and broken-pipe errors gracefully in Ruby command-line tools'
   spec.homepage = 'https://github.com/chocolateboy/cli-pasta'
-  spec.license  = 'Artistic-2.0'
+  spec.license  = 'MIT'
 
   spec.files = `git ls-files -z *.md bin lib`.split("\0")
 
